@@ -13,7 +13,17 @@ public class RockPaperSissorsEvaluator {
      * @return the respective winning move
      */
     public String getWinningMove(String handSign) {
-        return null;
+        String winningMove= "";
+       if (handSign == "rock"){
+           winningMove = "paper";
+       }
+       else if (handSign == "paper"){
+           winningMove = "scissor";
+       }
+       else if (handSign == "scissor"){
+           winningMove = "rock";
+       }
+       return winningMove;
     }
 
     /**
@@ -21,7 +31,17 @@ public class RockPaperSissorsEvaluator {
      * @return the respective losing move
      */
     public String getLosingMove(String handSign) {
-        return null;
+        String losingMove= "";
+        if (handSign == "rock"){
+            losingMove = "scissor";
+        }
+        else if (handSign == "paper"){
+            losingMove = "rock";
+        }
+        else if (handSign == "scissor"){
+            losingMove = "paper";
+        }
+        return losingMove;
     }
 
     /**
@@ -30,6 +50,42 @@ public class RockPaperSissorsEvaluator {
      * @return a string representative of the winning hand sign between the two players
      */
     public String getWinner(String handSignOfPlayer1, String handSignOfPlayer2) {
-        return null;
+        String winner = "";
+        if (handSignOfPlayer1 =="rock"){
+            if (handSignOfPlayer2 =="scissor"){
+              winner = "rock";
+            }
+            else if (handSignOfPlayer2 == "paper"){
+                winner = "paper";
+            }
+            else if (handSignOfPlayer2 == "rock")
+                winner = "tie";
+
+        }
+
+        else if (handSignOfPlayer1 =="paper"){
+                if (handSignOfPlayer2 =="scissor"){
+                    winner = "scissor";
+                }
+                else if (handSignOfPlayer2 == "paper"){
+                    winner = "tie";
+                }
+                else if (handSignOfPlayer2 == "rock")
+                    winner = "paper";
+
+        }
+        else if (handSignOfPlayer1 =="scissor"){
+            if (handSignOfPlayer2 =="scissor"){
+                winner = "tie";
+            }
+            else if (handSignOfPlayer2 == "paper"){
+                winner = "scissor";
+            }
+            else if (handSignOfPlayer2 == "rock")
+                winner = "rock";
+
+        }
+
+        return winner;
     }
 }
