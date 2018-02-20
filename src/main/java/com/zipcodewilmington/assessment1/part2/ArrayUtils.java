@@ -17,12 +17,12 @@ public class ArrayUtils {
     public static Integer getNumberOfOccurrences(Object[] objectArray, Object objectToCount) {
         int timesSeen = 0;
         for (int i = 0; i < objectArray.length; i++) {
-            if (objectArray[i].equals(objectToCount)) {
-                timesSeen++;
-            }
+        if (objectArray[i].equals(objectToCount)) {
+            timesSeen++;
         }
-        return timesSeen;
     }
+        return timesSeen;
+}
 
 
     /**
